@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+html {
+  scrollbar-gutter: stable;
+}
+
+:root {
+  --background: #17130d;
+  --foreground: #f7eddc;
+  --chess-bg: #17130d;
+  --chess-bg-soft: #211a12;
+  --chess-panel: #261f16;
+  --chess-panel-strong: #30271b;
+  --chess-cream: #f7eddc;
+  --chess-cream-muted: #e3d3b8;
+  --chess-gold: #f0c56a;
+  --chess-green: #79a83b;
+  --chess-green-dark: #4f7724;
+  --chess-brown: #8a5a2b;
+  --chess-border: rgba(247, 237, 220, 0.16);
+  --chess-shadow: 0 22px 64px rgba(0, 0, 0, 0.34);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-chess-bg: var(--chess-bg);
+  --color-chess-bg-soft: var(--chess-bg-soft);
+  --color-chess-panel: var(--chess-panel);
+  --color-chess-cream: var(--chess-cream);
+  --color-chess-gold: var(--chess-gold);
+  --color-chess-green: var(--chess-green);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+::selection {
+  background: rgba(121, 168, 59, 0.35);
+  color: #fffaf0;
+}
+
+.chess-app-bg {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(240, 197, 106, 0.075), transparent 34%),
+    radial-gradient(circle at 88% 8%, rgba(121, 168, 59, 0.065), transparent 32%),
+    linear-gradient(180deg, #1b150e 0%, #17130d 48%, #14100b 100%);
+}
+
+.card-surface {
+  border: 1px solid var(--chess-border);
+  background:
+    linear-gradient(180deg, rgba(247, 237, 220, 0.065), rgba(247, 237, 220, 0.025)),
+    var(--chess-panel);
+  box-shadow: var(--chess-shadow);
+}
+
+.wood-surface {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(240, 197, 106, 0.075), transparent 34%),
+    linear-gradient(135deg, rgba(62, 48, 31, 0.94), rgba(38, 31, 22, 0.98));
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px rgba(240, 197, 106, 0.42);
+}

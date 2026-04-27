@@ -1,0 +1,10 @@
+/.codex
+/.python-version
+/.venv/
+/main.py
+/pyproject.toml
+/uv.lock
+/logs/
+*.pyc
+__pycache__/
+.DS_Store

@@ -2,6 +2,7 @@
 
 import type { FormEvent } from "react";
 import { useEffect, useId, useState } from "react";
+import { createPortal } from "react-dom";
 import { Check, Crown, ShieldCheck, Sparkles, X, Zap } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -92,7 +93,10 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
 
   if (!isOpen) return null;
 
-  return (
+  const portalRoot = typeof document === "undefined" ? null : document.body;
+  if (!portalRoot) return null;
+
+  return createPortal(
     <div className="fixed inset-0 z-50 overflow-y-auto px-4 py-8 sm:px-6 sm:py-10">
       <button
         type="button"
@@ -254,6 +258,7 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
           </div>
         </div>
       </section>
-    </div>
+    </div>,
+    portalRoot,
   );
 }

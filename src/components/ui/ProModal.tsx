@@ -93,7 +93,7 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
+    <div className="fixed inset-0 z-50 flex overflow-y-auto px-4 py-6 sm:px-6">
       <button
         type="button"
         aria-label="Close Pro modal"
@@ -106,7 +106,7 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="wood-surface relative z-10 max-h-[calc(100svh-32px)] w-full max-w-4xl overflow-y-auto rounded-[2.25rem] border border-[var(--chess-border)] shadow-[0_30px_90px_rgba(0,0,0,0.58)]"
+        className="wood-surface relative z-10 m-auto max-h-[calc(100svh-48px)] w-full max-w-3xl overflow-y-auto rounded-[2rem] border border-[var(--chess-border)] shadow-[0_30px_90px_rgba(0,0,0,0.58)]"
       >
         <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-[var(--chess-gold)]/12 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[var(--chess-green)]/12 blur-3xl" />
@@ -120,7 +120,7 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
           <X className="h-5 w-5" aria-hidden="true" />
         </button>
 
-        <div className="relative grid gap-6 p-6 sm:p-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="relative grid gap-5 p-5 sm:p-6 xl:grid-cols-[1.05fr_0.95fr]">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--chess-gold)]/35 bg-[var(--chess-gold)]/10 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.24em] text-[var(--chess-gold)]">
               <Crown className="h-3.5 w-3.5" aria-hidden="true" />
@@ -129,16 +129,16 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
 
             <h2
               id={titleId}
-              className="mt-5 font-display text-4xl font-bold leading-[0.95] tracking-tight text-[var(--chess-cream)] sm:text-5xl"
+              className="mt-4 font-display text-3xl font-bold leading-[0.98] tracking-tight text-[var(--chess-cream)] sm:text-4xl"
             >
               Unlock {featureName}.
             </h2>
-            <p id={descriptionId} className="mt-4 max-w-xl text-base leading-8 text-[var(--chess-cream-muted)]">
+            <p id={descriptionId} className="mt-3 max-w-xl text-sm leading-7 text-[var(--chess-cream-muted)]">
               Pro is the upgrade layer for competitive features. Payments are not wired yet, so
               the upgrade button currently shows a Stripe placeholder.
             </p>
 
-            <div className="mt-6 grid gap-3">
+            <div className="mt-5 grid gap-2.5">
               {FEATURES.map((feature) => (
                 <div key={feature} className="flex items-start gap-3 rounded-2xl border border-[var(--chess-border)] bg-black/18 p-3">
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--chess-green)] text-[#141009]">
@@ -150,7 +150,7 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
             </div>
           </div>
 
-          <div className="rounded-[1.75rem] border border-[var(--chess-border)] bg-black/20 p-4 sm:p-5">
+          <div className="rounded-[1.75rem] border border-[var(--chess-border)] bg-black/20 p-4">
             <div className="flex items-start gap-3 rounded-[1.5rem] border border-[var(--chess-gold)]/25 bg-[var(--chess-gold)]/10 p-4">
               <ShieldCheck className="mt-0.5 h-5 w-5 text-[var(--chess-gold)]" aria-hidden="true" />
               <div>
@@ -167,7 +167,7 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
                   key={plan.label}
                   type="button"
                   onClick={() => setNotice("Stripe integration coming soon!")}
-                  className="focus-ring group min-h-24 rounded-[1.5rem] border border-[var(--chess-border)] bg-white/[0.045] p-4 text-left transition hover:border-[var(--chess-gold)]/45 hover:bg-white/[0.075]"
+                  className="focus-ring group min-h-20 rounded-[1.5rem] border border-[var(--chess-border)] bg-white/[0.045] p-4 text-left transition hover:border-[var(--chess-gold)]/45 hover:bg-white/[0.075]"
                 >
                   <div className="flex items-center justify-between gap-3">
                     <div>

@@ -93,11 +93,11 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex overflow-y-auto px-4 py-6 sm:px-6">
+    <div className="fixed inset-0 z-50 overflow-y-auto px-4 py-8 sm:px-6 sm:py-10">
       <button
         type="button"
         aria-label="Close Pro modal"
-        className="absolute inset-0 cursor-default bg-black/72 backdrop-blur-md"
+        className="fixed inset-0 cursor-default bg-black/72 backdrop-blur-md"
         onClick={onClose}
       />
 
@@ -106,7 +106,7 @@ export function ProModal({ featureName = "this feature", isOpen, onClose }: ProM
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="wood-surface relative z-10 m-auto max-h-[calc(100svh-48px)] w-full max-w-3xl overflow-y-auto rounded-[2rem] border border-[var(--chess-border)] shadow-[0_30px_90px_rgba(0,0,0,0.58)]"
+        className="wood-surface relative z-10 mx-auto w-full max-w-3xl rounded-[2rem] border border-[var(--chess-border)] shadow-[0_30px_90px_rgba(0,0,0,0.58)]"
       >
         <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-[var(--chess-gold)]/12 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[var(--chess-green)]/12 blur-3xl" />

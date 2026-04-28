@@ -75,7 +75,7 @@ export async function registerAction(
   if (password !== confirmPassword) return { error: "Passwords do not match." };
 
   const supabase = await createServerSupabaseClient();
-  const { data, error } = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email,
     password,
     options: { data: { city, username } },
@@ -85,9 +85,5 @@ export async function registerAction(
     return { error: mapAuthErrorMessage(error.message) };
   }
 
-  if (data.session) {
-    return { error: null, redirectTo: "/lobby" };
-  }
-
-  return { error: null, redirectTo: `/confirm-email?email=${encodeURIComponent(email)}` };
+  return { error: null, redirectTo: "/lobby" };
 }

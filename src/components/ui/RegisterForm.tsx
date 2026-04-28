@@ -185,10 +185,7 @@ export function RegisterForm() {
           {!isPending ? <ArrowRight className="h-4 w-4" /> : null}
         </button>
 
-        <p className="rounded-[1.25rem] border border-[#d8cab6] bg-white/60 px-4 py-3 text-sm leading-6 text-[#5c4f3f]">
-          This project currently requires email confirmation before the first login. After signup,
-          you will be sent to a confirmation screen with the next step.
-        </p>
+
       </form>
 
       <p className="mt-6 text-sm text-[#5c4f3f]">

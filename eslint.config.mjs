@@ -9,8 +9,11 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+    "chessmind/.next/**",
+    "chessmind/node_modules/**",
     "out/**",
     "build/**",
+    "node_modules/**",
     "next-env.d.ts",
     "public/stockfish-18-lite-single.js",
   ]),

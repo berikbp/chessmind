@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 import { createProxySupabaseClient } from "@/lib/supabase/server";
 
-const AUTH_ROUTES = ["/confirm-email", "/login", "/register"];
+const AUTH_ROUTES = ["/login", "/register"];
 
 function isAuthRoute(pathname: string) {
   return AUTH_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`));
